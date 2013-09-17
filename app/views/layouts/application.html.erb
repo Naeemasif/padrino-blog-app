@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    
+		<%= stylesheet_link_tag 'reset', 'application' %>
+		<%= yield_content :include %>
+		<%=javascript_include_tag 'jquery', 'jquery-ujs', 'application'%>
+  </head>
+  <body>
+
+<div id="container"> 
+
+  <div id="header">
+    <div class="headtitle">Padrino Blog</div>
+  </div>
+
+  <div id="menu"> 
+    <ul>
+      <li>
+          <%= link_to 'Home', url_for(:posts, :index) %>
+        </li>
+      <li>
+          <%= link_to 'About us', url_for(:posts, :index) %>
+        </li>
+        <li>
+          <%= link_to 'Contact us', url_for(:posts, :index) %>
+        </li>
+        <li>
+		<%= link_to 'Add New Post','/new' %>
+		</li>
+    </ul>
+  </div>
+
+
+  <div id="content"> 
+	<div id="insidecontent">
+    <%= yield %>
+    </div>
+</div>
+
+
+
+  <div id="footer"> <span>Copyright © NextBrigde | All Rights Reserved  </span> 
+  </div>
+
+</div>
+</body>
+</html>

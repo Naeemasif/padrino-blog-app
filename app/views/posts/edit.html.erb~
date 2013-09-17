@@ -1,0 +1,17 @@
+<div class="tabs-content">
+  <% form_for :post, url(:posts, :update, :id => @post.id), :method => :put do |f| %>
+   <h1><%= f.label :title %></h1>
+<div>
+<%= f.text_field :title,:size => "41x30", :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+</div>
+<h1><%= f.label :body, :class => 'control-label' %></h1>
+<div>
+<%= f.text_area :body,  :class => "styled" %>
+</div>
+<%= f.submit :class => 'btn btn-primary', :class => "button-style" %>
+<% end %>
+<div >
+  <%= f.submit :class => 'btn btn-primary', :class => "button-style" %>
+  <%= link_to 'cancel', url(:posts, :index), :class => 'btn' %>
+</div>
+</div>

@@ -1,0 +1,10 @@
+<%= link_to "<button>Back</button>".html_safe,'/',:class=> "backlink-style" %>
+		<% form_for :post, url(:posts, :create) do |f| %>
+				<h1><%= f.label :title %></h1>
+				<div><%= f.text_field :title,:size => "41x30", :class => 'input-xlarge input-with-feedback', :autofocus => true %></div>
+				<h1><%= f.label :body, :class => 'control-label' %></h1>
+				<div><%= f.text_area :body,  :class => "styled" %></div>
+				<%= f.submit :class => 'btn btn-primary', :class => "button-style" %>
+		<% end %>
+ 
+

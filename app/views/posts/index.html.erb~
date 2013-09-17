@@ -1,0 +1,23 @@
+<%=javascript_include_tag 'jquery', 'jquery-ujs', 'application'%>
+	<div id="insidecontent">
+	
+		<% @posts.each do |post| %>
+			
+				<h1><%= post.title %></h1></br>
+				<p><%= post.body %></p></br>
+				
+				<div id ="post-links">
+					<%= link_to 'Add comment-', "/new_comment?post_id=#{ post.id }" %>
+					<%= link_to "Comments-#{post.comments.count}", "/index?post_id=#{ post.id }" %>  
+					<%= link_to 'Edit post', "/edit?post_id=#{ post.id }" %>                                                    
+					<%= link_to "-Delete Post", url(:posts, :destroy, :id => post.id), :confirm => "Are You Sure?", :method => :delete%>
+			    </div>
+			<% end %>
+	</div>
+
+
+
+
+
+
+ 

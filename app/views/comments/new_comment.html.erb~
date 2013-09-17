@@ -1,0 +1,19 @@
+<%= link_to "<button>Back</button>".html_safe,'/',:class=> "backlink-style" %>
+<% form_for :comment, url(:comments, :create) do |f| %>
+    <h1><%= f.label :name %></h1>
+  <div>
+    <%= f.text_field :name, :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+  </div>
+	<h1><%= f.label :email %></h1>
+	<div>
+    <%= f.text_field :email, :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+    <%= hidden_field_tag 'post_id',:value => params[:post_id] %>
+  </div>
+	<h1><%= f.label :body, :class => 'control-label' %></h1>
+  <div>
+    <%= f.text_area :body, :class => 'input-xlarge input-with-feedback', :style=> "height:200px; width:300px;" %>
+  </div>
+	
+<%= f.submit :class => 'btn btn-primary', :class => "button-style" %>
+<% end %>
+

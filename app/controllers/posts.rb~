@@ -1,0 +1,57 @@
+AppBlog::App.controllers :posts do
+  
+  # get :index, :map => '/foo/bar' do
+  #   session[:foo] = 'bar'
+  #   render 'index'
+  # end
+
+  # get :sample, :map => '/sample/url', :provides => [:any, :js] do
+  #   case content_type
+  #     when :js then ...
+  #     else ...
+  # end
+
+  # get :foo, :with => :id do
+  #   'Maps to url '/foo/#{params[:id]}''
+  # end
+
+  # get '/example' do
+  #   'Hello world!'
+  # end
+  get :index, :map =>'/' do
+    @title = "Posts"
+    @posts = Post.all
+    render 'posts/index'
+  end
+
+  get :new, :map =>'/new' do
+    @post = Post.new
+    render 'posts/new'
+  end
+
+  post :create  do
+    @post = Post.new(params[:post])
+    
+    if @post.save
+      flash[:notice] = 'Post was successfully created.'
+      redirect url(:posts, :index)
+    else
+      render 'posts/new'
+    end
+  end
+ 
+delete :destroy do
+    
+    @post = Post.find(params[:id])
+    if @post
+      if @post.destroy
+        flash[:notice] = 'Post was successfully deleted.'
+      else
+        flash[:notice] = 'Post can not be deleted.'
+      end
+      redirect url(:posts, :index)
+   
+    end
+  end
+
+end

@@ -1,0 +1,7 @@
+<%= link_to "<button>Back</button>".html_safe,'/',:class=> "backlink-style" %>
+	<%@comments.each do |comment| %>
+		<h3><%= comment.name%></h3>
+		<p><strong><%= comment.body %></strong></p>
+		
+		</br></br>
+	<% end %>

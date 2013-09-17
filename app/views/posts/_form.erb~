@@ -1,0 +1,16 @@
+<%= f.label :title, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :title, :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+   </div>
+</fieldset>
+
+  <%= f.label :body, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_area :body, :class => 'input-xlarge input-with-feedback' %>
+    
+</fieldset>
+<div class="form-actions">
+  <%= f.submit :class => 'btn btn-primary', :class => "button-style" %>
+  
+  <%= link_to 'cancel', url(:posts, :index), :class => 'btn' %>
+</div>
