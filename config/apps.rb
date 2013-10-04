@@ -35,3 +35,5 @@ end
 
 # Mounts the core application for this project
 Padrino.mount('AppBlog::App', :app_file => Padrino.root('app/app.rb')).to('/')
+
+Padrino.mount("AppBlog::Admin", :app_file => File.expand_path('../../admin/app.rb', __FILE__)).to("/admin")

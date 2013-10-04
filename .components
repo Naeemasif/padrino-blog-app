@@ -7,3 +7,4 @@
 :stylesheet: sass
 :namespace: AppBlog
 :migration_format: number
+:admin_renderer: erb

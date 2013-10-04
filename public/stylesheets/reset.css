@@ -34,39 +34,37 @@ body
 	left:            12px;
 }
 
-#menu
+.menu
 {
 	margin:          0 20px;
 	height:          29px;
 	padding:         5px 0;
 }
 
-#menu ul
+.menu ul
 {
 	margin:          0;
 	padding:         7px;
-
 	height:          29px;
 }
 
-#menu ul li
+.menu ul li
 {
 	list-style:      none;
 	display:         inline;
 }
 
-#menu ul li a:link, #menu ul li a:active, #menu ul li a:visited
+.menu ul li a:link, .menu ul li a:active, .menu ul li a:visited
 {
 	color:           #767676;	
 	padding:         10px 7px 10px 7px;
 	font-size:       1.3em;
-
 	font-family:     'lucida grande', arial, sans-serif;
 	font-weight:     bold;
 	text-decoration: none;
 }
 
-#menu ul li a:hover
+.menu ul li a:hover
 {
 	background-color:  #6A7919;
 	color:           #FDFDFD;
@@ -94,10 +92,10 @@ body
 {
 	text-align:justify;
 	padding-right:    5px;
-	margin:          3px;
+	margin:          2px;
 	color:           #767676;
 	font-family:     Tahoma;
-	font-size:       1.2em;
+	font-size:       1.4em;
 	line-height:     190%;
 }
 
@@ -152,43 +150,51 @@ h3
 	color:           #767676;
 }
 textarea.styled {
-	margin-left: 10px;
-	width: 400px;
-	height: 300px;
-	border: 2px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
+	margin-left: 	10px;
+	width: 			400px;
+	height: 		300px;
+	border: 		2px solid #cccccc;
+	padding: 		5px;
+	font-family: 	Tahoma, sans-serif;
 	background-image: url(bg.gif);
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
 .button-style{
-	margin-top:  15px;
-	margin-left: 277px;
-  color: #6A7919;
-  width: 150px;
-  height: 50px;
+	margin-top:  	15px;
+	margin-left: 	277px;
+	color: 			#6A7919;
+	width: 			150px;
+	height: 		50px;
   
 }
 .backlink-style
 {
-position:        relative;
-	top:         0.7em;
-	left:        50em;
-font-family: Tahoma, sans-serif;
+	position:        relative;
+	top:         	0.7em;
+	left:        	50em;
+font-family: 		Tahoma, sans-serif;
 
 }
 #post-links
 {
-color: #767676;
-float:  right;
-font-size:  1em;
+	color: 			#767676;
+	float:  		right;
+	font-size:  	1em;
 }
 #comment-links
 {
-color: #767676;
-float:  right;
-font-size:  1em;
+	color: 			#767676;
+	float:  		right;
+	font-size:  	1em;
 }
-
+.login-link
+{
+	float:  		right;
+	font-size:  	1.3em;
+	margin-top:  	-7px;
+	margin-right: 	-150px;
+	width: 			500px;
+	height: 		100px;
+}
 

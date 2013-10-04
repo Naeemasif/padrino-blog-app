@@ -7,14 +7,27 @@
 		<%=javascript_include_tag 'jquery', 'jquery-ujs', 'application'%>
   </head>
   <body>
+<div class ="login-link">
+	<div class="menu"> 
+		<ul><div style='font-color: white;'>
+			Logged In: <%=logged_in?%>
+		    Session: <%= session[:account_check]%>
+		    </div>
+			<% if logged_in? -%>
+			<li><%= link_to 'Sign out', url_for(:posts, :logout),{:style=>'color:#FFFFFF;'} %></li>
+			<% else -%>
+			<li><%= link_to 'Sign in', url_for(:posts, :login),{:style=>'color:#FFFFFF;'} %></li>
+			<%end -%>
+		</ul>
+	</div>
+</div>
 
 <div id="container"> 
 
   <div id="header">
     <div class="headtitle">Padrino Blog</div>
   </div>
-
-  <div id="menu"> 
+  <div class="menu"> 
     <ul>
       <li>
           <%= link_to 'Home', url_for(:posts, :index) %>
@@ -26,7 +39,7 @@
           <%= link_to 'Contact us', url_for(:posts, :index) %>
         </li>
         <li>
-		<%= link_to 'Add New Post','/new' %>
+		<%#= link_to 'Add New Post','/new' %>
 		</li>
     </ul>
   </div>

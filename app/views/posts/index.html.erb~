@@ -1,3 +1,4 @@
+
 <%=javascript_include_tag 'jquery', 'jquery-ujs', 'application'%>
 	<div id="insidecontent">
 	
@@ -7,14 +8,16 @@
 				<p><%= post.body %></p></br>
 				
 				<div id ="post-links">
-					<%= link_to 'Add comment-', "/new_comment?post_id=#{ post.id }" %>
-					<%= link_to "Comments-#{post.comments.count}", "/index?post_id=#{ post.id }" %>  
-					<%= link_to 'Edit post', "/edit?post_id=#{ post.id }" %>                                                    
-					<%= link_to "-Delete Post", url(:posts, :destroy, :id => post.id), :confirm => "Are You Sure?", :method => :delete%>
+					
+					<%= "Posted by | #{post.account.email}" %><%=" |"%>
+					<%= time_ago_in_words(post.created_at || Time.now) + ' ago|' %>
+					<%= link_to 'Add comment', "/new_comment?post_id=#{ post.id }",{:style=>'color:#6A7919;'} %><%=" |"%>
+					<%= link_to "Comments-#{post.comments.count}", "/index?post_id=#{ post.id }" ,{:style=>'color:#6A7919;'}%>  
+					<%#= link_to 'Edit post', "/edit?post_id=#{ post.id }" %>                                                    
+					<%#= link_to "-Delete Post", url(:posts, :destroy, :id => post.id), :confirm => "Are You Sure?", :method => :delete%>
 			    </div>
 			<% end %>
 	</div>
-
 
 
 

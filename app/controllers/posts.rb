@@ -6,6 +6,13 @@ AppBlog::App.controllers :posts do
 		render 'posts/index'
 	end
 	
+	get :login, :map=>'/admin/sessions/new' do
+	render 'sessions/new'
+	end
+	get :logout do
+	redirect AppBlog::Admin.url(:sessions, :destroy)
+	end
+
 	get :new, :map =>'/new' do
 		@post = Post.new
 		render 'posts/new'
